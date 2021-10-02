@@ -1,3 +1,7 @@
+*.bat
+*.csv
+*.json
+contest_date.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
