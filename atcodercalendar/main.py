@@ -15,6 +15,7 @@ def omit(S):
     S_ = S_.replace('AtCoder Beginner Contest','ABC')
     S_ = S_.replace('AtCoder Regular Contest','ARC')
     S_ = S_.replace('AtCoder Heuristic Contest','AHC')
+    S_ = S_.replace('AtCoder Grand Contest','AGC')
     S_ = S_.replace('Programming Contest','PC')
     S_ = S_.replace(year,'')
     S_ = S_.replace('◉  ','')
@@ -24,7 +25,7 @@ def omit(S):
 
 today = datetime.date.today()
 year = today.strftime('%Y')
-old_df = pd.read_csv('old.csv')
+old_df = pd.read_csv('../old.csv')
 url =  'https://atcoder.jp/contests/'
 df = pd.read_html(url)
 StartTime = []
@@ -66,7 +67,7 @@ creds = None
 # time.
 
 # if os.path.exists('token.json'):
-creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+creds = Credentials.from_authorized_user_file('../token.json', SCOPES)
 
 # If there are no (valid) credentials available, let the user log in.
 if not creds or not creds.valid:

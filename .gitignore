@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
-=======
+
 cal.bat
 *.csv
 *.json
 contest_date.py
->>>>>>> Stashed changes
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
