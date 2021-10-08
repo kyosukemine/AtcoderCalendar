@@ -1,1 +1,2 @@
 # AtcoderCalendar
+Atcoderからコンテスト情報をスクレイピングしてgoogleカレンダーに書き込みを行うよ
