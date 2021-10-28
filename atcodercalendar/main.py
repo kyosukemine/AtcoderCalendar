@@ -48,8 +48,8 @@ df = pd.DataFrame(index=[], columns=cols)
 df['StartTime'] = StartTime
 df['EndTime'] = EndTime
 df['ContestName'] = ContestName
-
-df.to_csv('old.csv', index=0)
+# new.csvファイルの作成をする
+df.to_csv('../old.csv', index=0)
 
 write_calender_df = df[~df.isin(old_df.to_dict(orient='list')).all(1)]
 
@@ -78,10 +78,10 @@ if not creds or not creds.valid:
     # else:
     print("credsが有効じゃないかも")
     flow = InstalledAppFlow.from_client_secrets_file(
-        'client_secret_1046041032257-va7lnj01fdh5kelhkok5n4g39ed2on1g.apps.googleusercontent.com.json', SCOPES)
+        '../client_secret_1046041032257-va7lnj01fdh5kelhkok5n4g39ed2on1g.apps.googleusercontent.com.json', SCOPES)
     creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
-    with open('token.json', 'w') as token:
+    with open('../token.json', 'w') as token:
         token.write(creds.to_json())
 
 service = build('calendar', 'v3', credentials=creds)
@@ -111,6 +111,7 @@ if not df.empty:
         event = service.events().insert(calendarId='upguod47r5vb8dg5jijfo1f3vk@group.calendar.google.com',
                                         body=event).execute()
         print("カレンダー書けたよ!!!!!!")
+        print(n)
 else:
     print("カレンダー変更なしだよ!!!!!!")
 
